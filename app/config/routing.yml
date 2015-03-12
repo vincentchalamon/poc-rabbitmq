@@ -1,0 +1,4 @@
+les_tilleuls_demo:
+    resource: "@LesTilleulsDemoBundle/Controller/"
+    type:     annotation
+    prefix:   /

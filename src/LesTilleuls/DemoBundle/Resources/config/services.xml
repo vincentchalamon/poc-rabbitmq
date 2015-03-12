@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <service id="les_tilleuls_demo.form.handler" class="LesTilleuls\DemoBundle\Form\Handler\FooFormHandler">
+            <argument type="service" id="doctrine.orm.entity_manager" />
+            <argument type="service" id="old_sound_rabbit_mq.les_tilleuls_foo_producer" />
+        </service>
+
+        <service id="les_tilleuls_demo.consumer.foo" class="LesTilleuls\DemoBundle\Component\AMPQ\FooConsumer">
+        </service>
+    </services>
+</container>

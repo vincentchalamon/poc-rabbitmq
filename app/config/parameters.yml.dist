@@ -1,0 +1,28 @@
+# This file is a "template" of what your parameters.yml file should look like
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     127.0.0.1
+    database_port:     ~
+    database_name:     symfony
+    database_user:     root
+    database_password: ~
+
+    mailer_transport:  smtp
+    mailer_host:       127.0.0.1
+    mailer_user:       ~
+    mailer_password:   ~
+
+    locale:            en
+
+    secret:            ThisTokenIsNotSoSecretChangeIt
+
+    # Rabbit Mq
+    la_fourchette_rabbit_mq.host:       localhost
+    la_fourchette_rabbit_mq.port:       5673
+    la_fourchette_rabbit_mq.login:      lafourchette
+    la_fourchette_rabbit_mq.password:   lafourchette
+    la_fourchette_rabbit_mq.vhost:      lafourchette
+    la_fourchette_synchro.alert_email:  ~
+
+    # Synchro
+    trigramme: "vbx"
