@@ -91,31 +91,31 @@ fos_rest:
 old_sound_rabbit_mq:
     connections:
         default:
-            host:     localhost
-            port:     5672
-            user:     guest
-            password: guest
-            vhost:    /
+            host:     %rabbitmq_host%
+            port:     %rabbitmq_port%
+            user:     %rabbitmq_login%
+            password: %rabbitmq_password%
+            vhost:    %rabbitmq_vhost%
             lazy:     false
     producers:
-        les_tilleuls_foo:
+        foo:
             connection: default
             exchange_options:
                 name: 'foo_exchange'
                 type: topic
     consumers:
-        les_tilleuls_foo:
+        bar:
             connection: default
             exchange_options:
                 name: 'foo_exchange'
                 type: topic
             queue_options:
-                name: 'foo_exchange'
+                name: 'foo_queue'
             callback: les_tilleuls_demo.consumer.foo
     rpc_clients:
-        integer_store:
+        foo:
             connection: default
     rpc_servers:
-        random_int:
+        bar:
             connection: default
-            callback: les_tilleuls_demo.rpc_server.random_int
+            callback: les_tilleuls_demo.consumer.bar

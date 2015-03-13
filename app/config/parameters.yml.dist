@@ -16,13 +16,8 @@ parameters:
 
     secret:            ThisTokenIsNotSoSecretChangeIt
 
-    # Rabbit Mq
-    la_fourchette_rabbit_mq.host:       localhost
-    la_fourchette_rabbit_mq.port:       5673
-    la_fourchette_rabbit_mq.login:      lafourchette
-    la_fourchette_rabbit_mq.password:   lafourchette
-    la_fourchette_rabbit_mq.vhost:      lafourchette
-    la_fourchette_synchro.alert_email:  ~
-
-    # Synchro
-    trigramme: "vbx"
+    host:              localhost
+    port:              5673
+    login:             guest
+    password:          guest
+    vhost:             /

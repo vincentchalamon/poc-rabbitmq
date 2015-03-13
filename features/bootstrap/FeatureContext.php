@@ -2,8 +2,10 @@
 
 use Behat\Behat\Context\Context;
 use Behat\Behat\Context\SnippetAcceptingContext;
-use Behat\Gherkin\Node\PyStringNode;
-use Behat\Gherkin\Node\TableNode;
+use LesTilleuls\DemoBundle\Entity\Foo;
+use LesTilleuls\DemoBundle\Entity\Bar;
+use Doctrine\ORM\Tools\SchemaTool;
+use Doctrine\ORM\EntityManager;
 
 /**
  * Defines application features from the specific context.
@@ -13,14 +15,14 @@ class FeatureContext implements Context, SnippetAcceptingContext
     /**
      * Entity manager
      *
-     * @var \Doctrine\ORM\EntityManager
+     * @var EntityManager
      */
     protected $em;
 
     /**
      * Schema tool
      *
-     * @var \Doctrine\ORM\Tools\SchemaTool
+     * @var SchemaTool
      */
     protected $schemaTool;
 
@@ -32,11 +34,11 @@ class FeatureContext implements Context, SnippetAcceptingContext
     protected $classes;
 
     /**
-     * @param \Doctrine\ORM\EntityManager $em
+     * @param EntityManager $em
      */
-    public function __construct(\Doctrine\ORM\EntityManager $em)
+    public function __construct(EntityManager $em)
     {
-        $this->schemaTool = new \Doctrine\ORM\Tools\SchemaTool($em);
+        $this->schemaTool = new SchemaTool($em);
         $this->classes = $em->getMetadataFactory()->getAllMetadata();
         $this->em = $em;
     }
@@ -46,10 +48,10 @@ class FeatureContext implements Context, SnippetAcceptingContext
      */
     public function iHaveAFoo()
     {
-        $foo = new \LesTilleuls\DemoBundle\Entity\Foo();
+        $foo = new Foo();
         $foo->setName('Hello World!');
         $foo->setDescription('Lorem ipsum dolor sit amet');
-        $bar = new \LesTilleuls\DemoBundle\Entity\Bar();
+        $bar = new Bar();
         $bar->setName('Test');
         $foo->setBar($bar);
         $this->em->persist($foo);

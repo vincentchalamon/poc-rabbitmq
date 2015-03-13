@@ -1,12 +1,5 @@
 Feature: I need to be able to use CRUD operations on foo API
 
-    @createSchema @dropSchema @debug
-    Scenario: I can get a list of foo
-        Given I send a GET request to "/foo/index"
-        Then the response status code should be 200
-        And the response should be in JSON
-        And print last JSON response
-
     @createSchema @dropSchema
     Scenario: I can get a list of foo
         Given I send a GET request to "/foo"
@@ -34,6 +27,7 @@ Feature: I need to be able to use CRUD operations on foo API
     Scenario: I can get a foo
         Given I have a foo
         When I send a GET request to "/foo/1"
+        And print last JSON response
         Then the response status code should be 200
         And the response should be in JSON
 
@@ -54,5 +48,5 @@ Feature: I need to be able to use CRUD operations on foo API
     Scenario: I can delete a foo
         Given I have a foo
         When I send a DELETE request to "/foo/1"
-        Then the response status code should be 200
-        And the response should be in JSON
+        Then the response status code should be 204
+        And the response should be empty

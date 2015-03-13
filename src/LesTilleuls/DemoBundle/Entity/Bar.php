@@ -5,7 +5,7 @@ namespace LesTilleuls\DemoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Bar
+ * Bar.
  *
  * @ORM\Table()
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Bar
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -28,11 +28,10 @@ class Bar
      */
     private $name;
 
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -40,7 +39,7 @@ class Bar
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -54,7 +53,7 @@ class Bar
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */

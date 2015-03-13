@@ -15,6 +15,6 @@ class FooConsumer implements ConsumerInterface
     {
         /** @var Foo $foo */
         $foo = unserialize($msg->body);
-        echo "foo ".$foo->getName()." successfully downloaded!\n";
+        echo 'foo '.$foo->getName()." successfully downloaded!\n";
     }
 }

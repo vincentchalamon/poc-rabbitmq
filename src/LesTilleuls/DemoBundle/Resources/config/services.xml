@@ -7,10 +7,10 @@
     <services>
         <service id="les_tilleuls_demo.form.handler" class="LesTilleuls\DemoBundle\Form\Handler\FooFormHandler">
             <argument type="service" id="doctrine.orm.entity_manager" />
-            <argument type="service" id="old_sound_rabbit_mq.les_tilleuls_foo_producer" />
+            <argument type="service" id="old_sound_rabbit_mq.foo_producer" />
         </service>
 
-        <service id="les_tilleuls_demo.consumer.foo" class="LesTilleuls\DemoBundle\Component\AMPQ\FooConsumer">
-        </service>
+        <service id="les_tilleuls_demo.consumer.foo" class="LesTilleuls\DemoBundle\Component\AMPQ\FooConsumer" />
+        <service id="les_tilleuls_demo.consumer.bar" class="LesTilleuls\DemoBundle\Component\AMPQ\BarConsumer" />
     </services>
 </container>

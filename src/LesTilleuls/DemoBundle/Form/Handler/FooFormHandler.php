@@ -15,7 +15,7 @@ class FooFormHandler
     private $entityManager;
 
     /**
-     * Producer
+     * Producer.
      *
      * @var Producer
      */
@@ -23,7 +23,7 @@ class FooFormHandler
 
     /**
      * @param EntityManager $entityManager
-     * @param Producer $producer
+     * @param Producer      $producer
      */
     public function __construct(EntityManager $entityManager, Producer $producer)
     {
@@ -32,8 +32,9 @@ class FooFormHandler
     }
 
     /**
-     * @param  FormInterface       $form
-     * @param  Request             $request
+     * @param FormInterface $form
+     * @param Request       $request
+     *
      * @return mixed|FormInterface
      */
     public function handle(FormInterface $form, Request $request)

@@ -10,7 +10,7 @@ class FooFormType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
-     * @param array $options
+     * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -21,7 +21,7 @@ class FooFormType extends AbstractType
             ->add('bar', new BarFormType())
         ;
     }
-    
+
     /**
      * @param OptionsResolverInterface $resolver
      */

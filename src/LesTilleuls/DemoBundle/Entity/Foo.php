@@ -5,7 +5,7 @@ namespace LesTilleuls\DemoBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Foo
+ * Foo.
  *
  * @ORM\Table()
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Foo
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -29,7 +29,7 @@ class Foo
     private $name;
 
     /**
-     * @var boolean
+     * @var bool
      *
      * @ORM\Column(name="is_active", type="boolean")
      */
@@ -56,7 +56,6 @@ class Foo
      */
     private $bar;
 
-
     /**
      * Constructor.
      */
@@ -66,9 +65,9 @@ class Foo
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -76,7 +75,7 @@ class Foo
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -90,7 +89,7 @@ class Foo
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -100,9 +99,9 @@ class Foo
     }
 
     /**
-     * Set isActive
+     * Set isActive.
      *
-     * @param boolean $isActive
+     * @param bool $isActive
      *
      * @return Foo
      */
@@ -114,9 +113,9 @@ class Foo
     }
 
     /**
-     * Get isActive
+     * Get isActive.
      *
-     * @return boolean
+     * @return bool
      */
     public function isActive()
     {
@@ -124,7 +123,7 @@ class Foo
     }
 
     /**
-     * Set createdAt
+     * Set createdAt.
      *
      * @param \DateTime $createdAt
      *
@@ -138,7 +137,7 @@ class Foo
     }
 
     /**
-     * Get createdAt
+     * Get createdAt.
      *
      * @return \DateTime
      */
@@ -148,7 +147,7 @@ class Foo
     }
 
     /**
-     * Set description
+     * Set description.
      *
      * @param string $description
      *
@@ -162,7 +161,7 @@ class Foo
     }
 
     /**
-     * Get description
+     * Get description.
      *
      * @return string
      */
@@ -172,7 +171,7 @@ class Foo
     }
 
     /**
-     * Set bar
+     * Set bar.
      *
      * @param \LesTilleuls\DemoBundle\Entity\Bar $bar
      *
@@ -186,7 +185,7 @@ class Foo
     }
 
     /**
-     * Get bar
+     * Get bar.
      *
      * @return \LesTilleuls\DemoBundle\Entity\Bar
      */

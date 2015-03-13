@@ -17,18 +17,6 @@ use Symfony\Component\HttpFoundation\Request;
 class FooController extends Controller
 {
     /**
-     * @Route("/index", methods={"GET"})
-     * @View()
-     */
-    public function indexAction()
-    {
-        $client = $this->get('old_sound_rabbit_mq.integer_store_rpc');
-        $client->addRequest(serialize(array('min' => 0, 'max' => 10)), 'random_int', 'request_id');
-
-        return $client->getReplies();
-    }
-
-    /**
      * @Route("", methods={"GET"})
      * @View()
      */
@@ -38,12 +26,18 @@ class FooController extends Controller
     }
 
     /**
+     * RPC use.
+     *
      * @Route("/{id}", methods={"GET"}, requirements={"id"="\d+"})
      * @View()
      */
-    public function getAction(Foo $foo)
+    public function getAndReplyAction(Foo $foo)
     {
-        return $foo;
+        $client = $this->get('old_sound_rabbit_mq.foo_rpc');
+        $client->addRequest(serialize($foo), 'bar', 'request_id');
+        $replies = $client->getReplies();
+
+        return $replies['request_id'];
     }
 
     /**
@@ -72,15 +66,13 @@ class FooController extends Controller
 
     /**
      * @Route("/{id}", methods={"DELETE"}, requirements={"id"="\d+"})
-     * @View()
+     * @View(statusCode=204)
      */
     public function deleteAction(Foo $foo)
     {
         $em = $this->get('doctrine.orm.entity_manager');
         $em->remove($foo);
         $em->flush();
-        $this->get('old_sound_rabbit_mq.les_tilleuls_foo_producer')->publish(serialize($foo));
-
-        return '';
+        $this->get('old_sound_rabbit_mq.foo_producer')->publish(serialize($foo));
     }
 }
